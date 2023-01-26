@@ -1,0 +1,50 @@
+$todo-list-item-height: 40px;
+$todo-list-item-font-size: 16px;
+
+.button {
+  border-radius: 4px;
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: bold;
+
+  &--add {
+    height: $todo-list-item-height;
+    width: $todo-list-item-height;
+    background: linear-gradient(180deg, #39B54A 0%, #34AA44 97.78%);
+    border: 1px solid #249533;
+    border-radius: 4px;
+    flex-shrink: 0;
+
+    &:hover:not(:disabled) {
+      background: linear-gradient(0deg, #1E930B 3.22%, #1E9D09 100%);
+      border: 1px solid #1F872D;
+    }
+
+    &:active:not(:disabled) {
+      background: linear-gradient(0deg, #1A740B 3.93%, #187A08 100%);
+      border: 1px solid #14661F;
+    }
+  }
+
+  &--delete {
+    width: calc($todo-list-item-height - 6px);
+    flex-shrink: 0;
+    margin: 3px 0;
+    background: linear-gradient(180deg, #F85359 3.03%, #DC151D 97.78%);
+    border: 1px solid #DB161E;
+
+    &:hover:not(:disabled) {
+      background: linear-gradient(180deg, #F14D53 3.03%, #D0161D 97.78%);
+      border: 1px solid #D0121A;
+    }
+
+    &:active:not(:disabled) {
+      background: linear-gradient(180deg, #EC4349 3.03%, #BD0C13 97.78%);
+      border: 1px solid #D01119;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}

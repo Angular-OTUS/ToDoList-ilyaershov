@@ -1,0 +1,35 @@
+@import '../../shared/styles/todo-list.scss';
+
+:host {
+  position: relative;
+  height: $todo-list-item-height;
+  padding-bottom: calc($todo-list-item-height / 8);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  font-size: 16px;
+  line-height: 16px;
+
+  &::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background: #DFE3E9;
+    content: " ";
+  }
+}
+
+.todo-list-item {
+  &__text {
+    margin-bottom: 0;
+    margin-right: 5px;
+    flex-grow: 1;
+    align-self: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}

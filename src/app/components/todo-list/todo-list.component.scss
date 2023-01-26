@@ -1,0 +1,40 @@
+@import '../../shared/styles/todo-list.scss';
+
+:host {
+  width: 350px;
+  padding: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  background: #FFFFFF;
+  border: 1px solid #DFE3E9;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+}
+
+.todo-list {
+  &__title {
+    margin: 0 auto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    color: #354052;
+  }
+
+  &__hr {
+    margin: 10px 0;
+    background: #354052;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    list-style-type: none;
+  }
+
+  &__item {
+    margin-bottom: calc($todo-list-item-height / 8);
+  }
+}
