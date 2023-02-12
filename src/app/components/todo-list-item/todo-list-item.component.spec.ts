@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SharedModule } from '../../modules/shared/shared.module';
 
 import { TodoListItemComponent } from './todo-list-item.component';
 import { TodoListItem } from './todo-list-item.interfaces';
@@ -6,16 +7,18 @@ import { TodoListItem } from './todo-list-item.interfaces';
 describe('TodoListItemComponent', () => {
   let component: TodoListItemComponent;
   let fixture: ComponentFixture<TodoListItemComponent>;
-  let todoItem: TodoListItem = {
+  const todoItem: TodoListItem = {
     id: 1,
-    text: 'text'
+    text: 'text',
   };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TodoListItemComponent ]
-    })
-    .compileComponents();
+      declarations: [ TodoListItemComponent ],
+      imports: [
+        SharedModule,
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TodoListItemComponent);
     component = fixture.componentInstance;
@@ -31,7 +34,7 @@ describe('TodoListItemComponent', () => {
     // Arrange
     const emitMock = spyOn(component.itemDeleted, 'emit');
     const compiled = fixture.nativeElement as HTMLElement;
-    const deleteButton = compiled.querySelector('.button.button--delete') as HTMLButtonElement;
+    const deleteButton = compiled.querySelector('todo-button .button.button--delete') as HTMLButtonElement;
 
     // Act
     deleteButton.click();

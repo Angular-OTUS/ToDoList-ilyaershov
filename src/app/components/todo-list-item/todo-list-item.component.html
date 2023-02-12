@@ -1,2 +1,4 @@
 <p class="todo-list-item__text">{{ item.text }}</p>
-<button class="button button--delete" (click)="onDelete()">&times;</button>
+<todo-button class="button button_delete" type="button" buttonType="delete" (buttonClick)="onDelete()">
+  &times;
+</todo-button>

@@ -8,20 +8,20 @@ describe('TodoListHelpers', () => {
     const list: TodoListItem[] = [
       {
         id: 1,
-        text: 'name'
-      }
+        text: 'name',
+      },
     ];
 
     const expectedList: TodoListItem[] = [
       {
         id: 1,
-        text: 'name'
+        text: 'name',
       },
       {
         id: 2,
-        text: 'expectedText'
-      }
-    ]
+        text: 'expectedText',
+      },
+    ];
 
     // Act
     const resultList = addItem(list, text);
@@ -36,27 +36,27 @@ describe('TodoListHelpers', () => {
     let list: TodoListItem[] = [
       {
         id: 1,
-        text: 'name'
+        text: 'name',
       },
       {
         id: 2,
-        text: 'to delete'
+        text: 'to delete',
       },
       {
         id: 3,
-        text: 'name'
-      }
+        text: 'name',
+      },
     ];
 
     const expectedList: TodoListItem[] = [
       {
         id: 1,
-        text: 'name'
+        text: 'name',
       },
       {
         id: 3,
-        text: 'name'
-      }
+        text: 'name',
+      },
     ];
 
     // Act
@@ -72,27 +72,27 @@ describe('TodoListHelpers', () => {
     let list: TodoListItem[] = [
       {
         id: 1,
-        text: 'to delete'
+        text: 'to delete',
       },
       {
         id: 2,
-        text: 'name'
+        text: 'name',
       },
       {
         id: 3,
-        text: 'name'
-      }
+        text: 'name',
+      },
     ];
 
     const expectedList: TodoListItem[] = [
       {
         id: 2,
-        text: 'name'
+        text: 'name',
       },
       {
         id: 3,
-        text: 'name'
-      }
+        text: 'name',
+      },
     ];
 
     // Act
@@ -108,27 +108,27 @@ describe('TodoListHelpers', () => {
     let list: TodoListItem[] = [
       {
         id: 1,
-        text: 'name'
+        text: 'name',
       },
       {
         id: 2,
-        text: 'name'
+        text: 'name',
       },
       {
         id: 3,
-        text: 'to delete'
-      }
+        text: 'to delete',
+      },
     ];
 
     const expectedList: TodoListItem[] = [
       {
         id: 1,
-        text: 'name'
+        text: 'name',
       },
       {
         id: 2,
-        text: 'name'
-      }
+        text: 'name',
+      },
     ];
 
     // Act

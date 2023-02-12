@@ -4,6 +4,7 @@ import { TodoAddFormComponent } from './todo-add-form.component';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from '../../modules/shared/shared.module';
 
 describe('TodoAddFormComponent', () => {
   let component: TodoAddFormComponent;
@@ -12,16 +13,17 @@ describe('TodoAddFormComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        TodoAddFormComponent
+        TodoAddFormComponent,
       ],
       imports: [
         FormsModule,
         NoopAnimationsModule,
         MatInputModule,
-        ReactiveFormsModule
-      ]
+        ReactiveFormsModule,
+        SharedModule,
+      ],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(TodoAddFormComponent);
     component = fixture.componentInstance;

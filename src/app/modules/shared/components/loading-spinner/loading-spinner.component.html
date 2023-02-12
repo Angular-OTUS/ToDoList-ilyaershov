@@ -1,0 +1,6 @@
+<div class="background" *ngIf="isLoading; else content">
+  <img src="/assets/icons/loading-spinner.svg" class="loader">
+</div>
+<ng-template #content>
+  <ng-content></ng-content>
+</ng-template>

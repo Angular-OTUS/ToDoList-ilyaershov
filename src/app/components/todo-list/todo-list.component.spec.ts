@@ -4,8 +4,8 @@ import { TodoListComponent } from './todo-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { TodoListItemComponent } from '../todo-list-item/todo-list-item.component';
-import { TodoAddFormComponent } from '../todo-add-form/todo-add-form.component';
+import * as Components from '../';
+import { SharedModule } from '../../modules/shared/shared.module';
 
 describe('TodoListComponent', () => {
   let component: TodoListComponent;
@@ -15,17 +15,18 @@ describe('TodoListComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [
         TodoListComponent,
-        TodoListItemComponent,
-        TodoAddFormComponent,
+        Components.TodoListItemComponent,
+        Components.TodoAddFormComponent,
       ],
       imports: [
         FormsModule,
         NoopAnimationsModule,
         MatInputModule,
-        ReactiveFormsModule
-      ]
+        ReactiveFormsModule,
+        SharedModule,
+      ],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(TodoListComponent);
     component = fixture.componentInstance;
