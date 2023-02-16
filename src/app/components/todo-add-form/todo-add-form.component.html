@@ -1,0 +1,15 @@
+<form class="add-form">
+  <mat-form-field class="add-form__input">
+    <mat-label>Что нужно сделать?</mat-label>
+    <input matInput type="text" placeholder="Что-то ещё?" [formControl]="inputText">
+    <mat-error *ngIf="inputText?.hasError('required')">
+      <strong>Введите текст</strong>
+    </mat-error>
+    <mat-error *ngIf="inputText?.hasError('minlength')">
+      <strong>Минимальное количество символов: 3</strong>
+    </mat-error>
+  </mat-form-field>
+  <button type="button" class="button button--add" (click)="onAdd()" [disabled]="!inputText.valid">
+    +
+  </button>
+</form>
