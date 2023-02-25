@@ -9,7 +9,7 @@
       <strong>Минимальное количество символов: 3</strong>
     </mat-error>
   </mat-form-field>
-  <todo-button type="button" buttonType="add" [disabled]="!inputText.valid" (buttonClick)="onAdd()">
+  <todo-button type="button" color="green" [disabled]="!inputText.valid" (click)="onAdd()">
     +
   </todo-button>
 </form>

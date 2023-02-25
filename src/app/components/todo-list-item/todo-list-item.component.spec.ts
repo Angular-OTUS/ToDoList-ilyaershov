@@ -34,7 +34,7 @@ describe('TodoListItemComponent', () => {
     // Arrange
     const emitMock = spyOn(component.itemDeleted, 'emit');
     const compiled = fixture.nativeElement as HTMLElement;
-    const deleteButton = compiled.querySelector('todo-button .button.button--delete') as HTMLButtonElement;
+    const deleteButton = compiled.querySelector('button.button.button--red') as HTMLButtonElement;
 
     // Act
     deleteButton.click();

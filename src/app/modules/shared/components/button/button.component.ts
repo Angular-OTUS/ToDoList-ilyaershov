@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ButtonColor, ButtonType } from './button.types';
 
 @Component({
   selector: 'todo-button',
@@ -6,30 +7,20 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./button.component.scss'],
 })
 export class ButtonComponent {
-  @Input()
-    buttonType?: 'add' | 'delete';
+  @Input() color?: ButtonColor;
 
-  @Input()
-    type?: 'submit' | 'reset' | 'button';
+  @Input() type?: ButtonType;
 
-  @Input()
-    disabled?: boolean = false;
-
-  @Output()
-    buttonClick = new EventEmitter();
+  @Input() disabled?: boolean = false;
 
   get buttonClass() {
-    switch (this.buttonType) {
-      case 'add':
-        return 'button--add';
-      case 'delete':
-        return 'button--delete';
+    switch (this.color) {
+      case 'red':
+        return 'button--red';
+      case 'green':
+        return 'button--green';
       default:
         return '';
     }
   }
-
-  onClick = () : void => {
-    this.buttonClick.emit();
-  };
 }

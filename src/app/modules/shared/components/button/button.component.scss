@@ -4,7 +4,7 @@
   font-size: 24px;
   font-weight: bold;
 
-  &--add {
+  &--green {
     height: 40px;
     width: 40px;
     background: linear-gradient(180deg, #39B54A 0%, #34AA44 97.78%);
@@ -23,7 +23,7 @@
     }
   }
 
-  &--delete {
+  &--red {
     width: 34px;
     flex-shrink: 0;
     margin: 3px 0;

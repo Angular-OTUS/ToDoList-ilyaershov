@@ -39,7 +39,7 @@ describe('TodoAddFormComponent', () => {
     const expectedValue = 'valid value';
     const emitMock = spyOn(component.itemAdded, 'emit');
     const compiled = fixture.nativeElement as HTMLElement;
-    const addButton = compiled.querySelector('.button.button--add') as HTMLButtonElement;
+    const addButton = compiled.querySelector('.button.button--green') as HTMLButtonElement;
     component.inputText.setValue(expectedValue);
     fixture.detectChanges();
 
@@ -55,7 +55,7 @@ describe('TodoAddFormComponent', () => {
     // Arrange
     const emitMock = spyOn(component.itemAdded, 'emit');
     const compiled = fixture.nativeElement as HTMLElement;
-    const addButton = compiled.querySelector('.button.button--add') as HTMLButtonElement;
+    const addButton = compiled.querySelector('.button.button--green') as HTMLButtonElement;
     component.inputText.setValue('12');
     fixture.detectChanges();
 
@@ -74,7 +74,7 @@ describe('TodoAddFormComponent', () => {
     // Arrange
     const emitMock = spyOn(component.itemAdded, 'emit');
     const compiled = fixture.nativeElement as HTMLElement;
-    const addButton = compiled.querySelector('.button.button--add') as HTMLButtonElement;
+    const addButton = compiled.querySelector('.button.button--green') as HTMLButtonElement;
     component.inputText.setValue('');
     fixture.detectChanges();
 
