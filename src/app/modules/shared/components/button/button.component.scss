@@ -1,15 +1,12 @@
-$todo-list-item-height: 40px;
-$todo-list-item-font-size: 16px;
-
 .button {
   border-radius: 4px;
   color: #FFFFFF;
   font-size: 24px;
   font-weight: bold;
 
-  &--add {
-    height: $todo-list-item-height;
-    width: $todo-list-item-height;
+  &--green {
+    height: 40px;
+    width: 40px;
     background: linear-gradient(180deg, #39B54A 0%, #34AA44 97.78%);
     border: 1px solid #249533;
     border-radius: 4px;
@@ -26,8 +23,8 @@ $todo-list-item-font-size: 16px;
     }
   }
 
-  &--delete {
-    width: calc($todo-list-item-height - 6px);
+  &--red {
+    width: 34px;
     flex-shrink: 0;
     margin: 3px 0;
     background: linear-gradient(180deg, #F85359 3.03%, #DC151D 97.78%);

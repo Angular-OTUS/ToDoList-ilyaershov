@@ -4,7 +4,7 @@ import { TodoListItem } from './todo-list-item.interfaces';
 @Component({
   selector: 'todo-list-item',
   templateUrl: './todo-list-item.component.html',
-  styleUrls: ['./todo-list-item.component.scss']
+  styleUrls: ['./todo-list-item.component.scss'],
 })
 export class TodoListItemComponent implements OnInit {
   @Input() item!: TodoListItem;
@@ -18,5 +18,5 @@ export class TodoListItemComponent implements OnInit {
 
   onDelete = () => {
     this.itemDeleted.emit(this.item.id);
-  }
+  };
 }

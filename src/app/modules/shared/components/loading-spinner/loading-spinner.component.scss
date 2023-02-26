@@ -1,0 +1,30 @@
+:host {
+  height: 100%;
+  width: 100%;
+}
+
+.background {
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.10);
+}
+
+.loader {
+  width: 30px;
+  height: 30px;
+  animation: spinner infinite linear 1s;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

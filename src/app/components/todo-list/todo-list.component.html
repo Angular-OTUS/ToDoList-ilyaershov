@@ -1,9 +1,12 @@
 <h2 class="todo-list__title">Задачи на сегодня</h2>
 <hr class="todo-list__hr">
 <div class="todo-list__list">
-  <div class="todo-list__item" *ngFor="let todoItem of todoList">
-    <todo-list-item [item]="todoItem" (itemDeleted)="onDelete(todoItem.id)" />
-  </div>
+  <loading-spinner *ngIf="isLoading; else list" />
+  <ng-template #list>
+    <div class="todo-list__item" *ngFor="let todoItem of todoList">
+      <todo-list-item [item]="todoItem" (itemDeleted)="onDelete(todoItem.id)" />
+    </div>
+  </ng-template>
 </div>
 <hr class="todo-list__hr">
 <todo-add-form (itemAdded)="onAdd($event)" />
