@@ -1,14 +1,18 @@
-import { TodoListItem } from '../todo-list-item/todo-list-item.interfaces';
+import { TodoListItem, TodoListItemCreateModel } from '../todo-list-item/todo-list-item.interfaces';
 import { addItem, deleteItem } from './todo-list.helpers';
 
 describe('TodoListHelpers', () => {
   it('should add todo item to list', () => {
     // Arrange
-    const text = 'expectedText';
+    const text : TodoListItemCreateModel = {
+      text: 'expectedText',
+      description: 'description',
+    };
     const list: TodoListItem[] = [
       {
         id: 1,
         text: 'name',
+        description: 'description',
       },
     ];
 
@@ -16,10 +20,12 @@ describe('TodoListHelpers', () => {
       {
         id: 1,
         text: 'name',
+        description: 'description',
       },
       {
         id: 2,
         text: 'expectedText',
+        description: 'description',
       },
     ];
 
@@ -37,14 +43,17 @@ describe('TodoListHelpers', () => {
       {
         id: 1,
         text: 'name',
+        description: 'description',
       },
       {
         id: 2,
         text: 'to delete',
+        description: 'description',
       },
       {
         id: 3,
         text: 'name',
+        description: 'description',
       },
     ];
 
@@ -52,10 +61,12 @@ describe('TodoListHelpers', () => {
       {
         id: 1,
         text: 'name',
+        description: 'description',
       },
       {
         id: 3,
         text: 'name',
+        description: 'description',
       },
     ];
 
@@ -73,14 +84,17 @@ describe('TodoListHelpers', () => {
       {
         id: 1,
         text: 'to delete',
+        description: 'description',
       },
       {
         id: 2,
         text: 'name',
+        description: 'description',
       },
       {
         id: 3,
         text: 'name',
+        description: 'description',
       },
     ];
 
@@ -88,10 +102,12 @@ describe('TodoListHelpers', () => {
       {
         id: 2,
         text: 'name',
+        description: 'description',
       },
       {
         id: 3,
         text: 'name',
+        description: 'description',
       },
     ];
 
@@ -109,14 +125,17 @@ describe('TodoListHelpers', () => {
       {
         id: 1,
         text: 'name',
+        description: 'description',
       },
       {
         id: 2,
         text: 'name',
+        description: 'description',
       },
       {
         id: 3,
         text: 'to delete',
+        description: 'description',
       },
     ];
 
@@ -124,10 +143,12 @@ describe('TodoListHelpers', () => {
       {
         id: 1,
         text: 'name',
+        description: 'description',
       },
       {
         id: 2,
         text: 'name',
+        description: 'description',
       },
     ];
 

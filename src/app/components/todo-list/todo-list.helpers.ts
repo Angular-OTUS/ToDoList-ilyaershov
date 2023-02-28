@@ -1,4 +1,4 @@
-import { TodoListItem } from '../todo-list-item/todo-list-item.interfaces';
+import { TodoListItem, TodoListItemCreateModel } from '../todo-list-item/todo-list-item.interfaces';
 
 function getMaxItemId(list: TodoListItem[]) {
   if (list.length === 0)
@@ -10,10 +10,10 @@ export function deleteItem(list: TodoListItem[], itemId: number) : TodoListItem[
   return list.filter(item => item.id !== itemId);
 }
 
-export function addItem(list: TodoListItem[], text: string) : TodoListItem[] {
+export function addItem(list: TodoListItem[], createModel: TodoListItemCreateModel) : TodoListItem[] {
   const newItem : TodoListItem = {
     id: getMaxItemId(list),
-    text,
+    ...createModel,
   };
 
   return [...list, newItem];

@@ -9,6 +9,8 @@ import { TodoListItem } from './todo-list-item.interfaces';
 export class TodoListItemComponent implements OnInit {
   @Input() item!: TodoListItem;
 
+  @Input() description!: string;
+
   @Output() itemDeleted = new EventEmitter<number>();
 
   ngOnInit() {

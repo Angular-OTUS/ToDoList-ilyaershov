@@ -5,6 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from '../../modules/shared/shared.module';
+import { TodoListItemCreateModel } from '../todo-list-item/todo-list-item.interfaces';
 
 describe('TodoAddFormComponent', () => {
   let component: TodoAddFormComponent;
@@ -36,11 +37,15 @@ describe('TodoAddFormComponent', () => {
 
   it('should emit itemAdded when add button is clicked', () => {
     // Arrange
-    const expectedValue = 'valid value';
+    const expectedValue: TodoListItemCreateModel = {
+      text: 'valid value',
+      description: 'valid description',
+    };
     const emitMock = spyOn(component.itemAdded, 'emit');
     const compiled = fixture.nativeElement as HTMLElement;
     const addButton = compiled.querySelector('.button.button--green') as HTMLButtonElement;
-    component.inputText.setValue(expectedValue);
+    component.inputText.setValue(expectedValue.text);
+    component.descriptionText.setValue(expectedValue.description);
     fixture.detectChanges();
 
     // Act

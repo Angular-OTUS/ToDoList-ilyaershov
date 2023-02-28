@@ -9,7 +9,17 @@
       <strong>Минимальное количество символов: 3</strong>
     </mat-error>
   </mat-form-field>
-  <todo-button type="button" color="green" [disabled]="!inputText.valid" (click)="onAdd()">
+  <mat-form-field class="add-form__input">
+    <mat-label>Описание</mat-label>
+    <input matInput type="text" placeholder="Что-то ещё?" [formControl]="inputText">
+    <mat-error *ngIf="descriptionText?.hasError('required')">
+      <strong>Введите текст</strong>
+    </mat-error>
+    <mat-error *ngIf="descriptionText?.hasError('minlength')">
+      <strong>Минимальное количество символов: 5</strong>
+    </mat-error>
+  </mat-form-field>
+  <todo-button type="button" color="green" [disabled]="!inputText.valid || !descriptionText.valid" (click)="onAdd()" [tooltip]="'Добавить'">
     +
   </todo-button>
 </form>
