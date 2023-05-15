@@ -1,4 +1,4 @@
-<p class="todo-list-item__text">{{ item.text }}</p>
-<todo-button type="button" color="red" (click)="onDelete()">
+<p class="todo-list-item__text" [tooltip]="item.description">{{ item.text }}</p>
+<todo-button type="button" color="red" [tooltip]="'Удалить'" (click)="onDelete()">
   &times;
 </todo-button>

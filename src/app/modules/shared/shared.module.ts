@@ -1,19 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonComponent } from './components/button/button.component';
-import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
+import { MatCardModule } from '@angular/material/card';
+import * as Components from './components/';
+import { TooltipDirective } from './directives/tooltip.directive';
 
 @NgModule({
   declarations: [
-    ButtonComponent,
-    LoadingSpinnerComponent,
+    Components.ButtonComponent,
+    Components.LoadingSpinnerComponent,
+    Components.TooltipComponent,
+    TooltipDirective,
   ],
   imports: [
     CommonModule,
+    MatCardModule,
   ],
   exports: [
-    ButtonComponent,
-    LoadingSpinnerComponent,
+    Components.ButtonComponent,
+    Components.LoadingSpinnerComponent,
+    Components.TooltipComponent,
+    TooltipDirective,
   ],
 })
 export class SharedModule { }

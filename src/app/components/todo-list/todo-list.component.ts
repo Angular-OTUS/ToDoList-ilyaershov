@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoListItem } from '../todo-list-item/todo-list-item.interfaces';
+import { TodoListItem, TodoListItemCreateModel } from '../todo-list-item/todo-list-item.interfaces';
 import { addItem, deleteItem } from './todo-list.helpers';
 
 @Component({
@@ -10,18 +10,23 @@ import { addItem, deleteItem } from './todo-list.helpers';
 export class TodoListComponent implements OnInit {
   isLoading = true;
 
+  selectedItemId = -1;
+
   todoList: TodoListItem[] = [
     {
       id: 0,
       text: 'Пробежать 42км',
+      description: 'Надо много бегать',
     },
     {
       id: 1,
       text: 'Выучить Angular',
+      description: 'Иначе без работы останешься',
     },
     {
       id: 2,
       text: 'Пройти Skyrim полностью',
+      description: 'Не, это точно перебор',
     },
   ];
 
@@ -31,12 +36,16 @@ export class TodoListComponent implements OnInit {
     }, 500);
   }
 
-  onAdd = (text: string) => {
-    if (!text) {
+  onAdd = (createModel: TodoListItemCreateModel) => {
+    if (!createModel) {
       return;
     }
 
-    this.todoList = addItem(this.todoList, text);
+    this.todoList = addItem(this.todoList, createModel);
+  };
+
+  onSelect = (id: number) => {
+    this.selectedItemId = id;
   };
 
   onDelete = (itemId: number) => {

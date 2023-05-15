@@ -10,6 +10,7 @@ describe('TodoListItemComponent', () => {
   const todoItem: TodoListItem = {
     id: 1,
     text: 'text',
+    description: 'description',
   };
 
   beforeEach(async () => {
