@@ -20,6 +20,10 @@ export class TodoAddFormComponent {
     Validators.minLength(5),
   ]);
 
+  get isAddButtonDisabled() {
+    return !(this.inputText.valid && this.descriptionText.valid);
+  };
+
   onAdd = () => {
     const { value: todoText } = this.inputText;
     const { value: description } = this.descriptionText;
@@ -34,5 +38,6 @@ export class TodoAddFormComponent {
     });
     
     this.inputText.reset('');
+    this.descriptionText.reset('');
   };
 }
